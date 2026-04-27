@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form method="POST" action="{{ url_for('login') }}">
+            <!-- {{ csrf_token() }} -->
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"> 
+            <div class="form-group">
+                <label for="username">Email/Username <span class="required">*</span></label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password <span class="required">*</span></label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" required autocomplete="off">
+                    <button type="button" id="togglePassword" aria-label="Toggle Password Visibility">Show</button>
+                </div>
+            </div>
+            <button type="submit">Login</button>
+            <div id="error-message" class="error"></div>
+        </form>
+        <p>Don't have an account? <a href="/register">Create Account</a>.</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Toggle password visibility
+            $('#togglePassword').click(function() {
+                var passwordField = $('#password');
+                var type = passwordField.attr('type') === 'password' ? 'text' : 'password';
+                passwordField.attr('type', type);
+                $(this).text(type === 'password' ? 'Show' : 'Hide');
+            });
+
+            // Client-side validation
+            $('form').submit(function(e) {
+                var username = $('#username').val();
+                var password = $('#password').val();
+                if (username.trim() === '' || password.trim() === '') {
+                    e.preventDefault();
+                    $('#error-message').text('Both fields are required.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

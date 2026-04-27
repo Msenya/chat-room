@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="toggle-btn" id="toggleSidebar">☰</div>
+    <div class="sidebar" id="sidebar">
+        <div class="connected-users">
+            <h3>Connected Users</h3>
+            <ul id="connected-users-list">
+                <!-- Dynamically populated list of users -->
+            </ul>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-area">
+            <div class="chat-header">
+                <h2>Chat Room</h2>
+            </div>
+            <div class="chat-bubbles" id="chat-bubbles">
+                <!-- Dynamically populated chat bubbles will go here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type your message...">
+                <button id="sendButton" class="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="chat.js"></script> <!-- Link to your JS file -->
+</body>
+</html>

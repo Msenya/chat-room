@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Chat App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='abc.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f7f6;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .auth-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #27ae60;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #219150;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Nameless</h1>
+        <p>Nameless is an online chat room where you can connect with others securely and anonymously. Freedom is priceless, so feel free to share your thoughts and engage in conversations without revealing your identity.</p>
+        <div class="auth-links">
+            <a href="{{ url_for('login') }}" class="btn">Login</a>
+            <a href="{{ url_for('register') }}" class="btn">Register</a>
+        </div>
+    </div>
+</body>
+</html>

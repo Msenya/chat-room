@@ -1,0 +1,335 @@
+/* Global styles */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.required {
+    color: red;
+    cursor: pointer;
+    position: relative;
+}
+
+.required:hover::after {
+    content: 'This field is required';
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+/* Form container styles */
+.form-container {
+    max-width: 500px;
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.1);
+    padding-top: 450px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label {
+    margin-bottom: 5px;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.form-container .password-container,
+.form-container .register-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-container .password-container input,
+.form-container .register-container input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container .password-container button,
+.form-container .register-container button {
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container .terms {
+    margin-top: 20px;
+}
+
+.form-container .terms h2 {
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.form-container .terms p {
+    margin-bottom: 10px;
+}
+
+.form-container textarea {
+    width: 100%;
+    height: 150px;
+    resize: none;
+}
+
+.form-container button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    color: white;
+    cursor: pointer;
+}
+
+.form-container button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="date"],
+.form-group input[type="tel"],
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input.invalid {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
+.password-strength {
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+.password-strength.weak {
+    color: red;
+}
+
+.password-strength.medium {
+    color: orange;
+}
+
+.password-strength.strong {
+    color: green;
+}
+
+.matchMessage {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.form-group.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.form-group.checkbox-group input {
+    margin-right: 10px;
+}
+
+/* Styles for the phone number input */
+.iti {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.iti__input {
+    padding-right: 5px; 
+    padding-left: 5px; 
+    box-sizing: border-box;
+    flex: 1;
+   
+}
+
+.iti--allow-dropdown input {
+    padding-right: 40px; 
+}
+
+.iti--separate-dial-code .iti__flag-container {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.iti__flag-container {
+    margin-left: 250px; 
+    margin-right: 0; 
+}
+
+.iti__flag-dropdown {
+    left: 100px; 
+    right: 0; 
+}
+
+/* Link styles */
+p {
+    text-align: center;
+    margin-top: 10px; /* Reduced top margin */
+}
+
+p a {
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden initially */
+    width: 250px;
+    height: 100%;
+    background-color: #f4f4f4;
+    transition: 0.3s;
+}
+
+.sidebar.open {
+    left: 0; /* Open sidebar */
+}
+
+.chat-container {
+    margin-left: 0;
+    transition: 0.3s;
+}
+
+.chat-container.sidebar-open {
+    margin-left: 250px; /* Adjust content when sidebar is open */
+}
+
+/* Message Bubbles */
+.message-bubble {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-bubble.sent {
+    background-color: #28a745; /* Green color */
+    color: white;
+    align-self: flex-end;
+}
+
+.message-bubble.received {
+    background-color: #e0e0e0; /* Light gray */
+    color: black;
+    align-self: flex-start;
+}
+
+.message-username {
+    font-weight: bold;
+}
+
+.message-content {
+    margin-top: 5px;
+}
+
+.message-timestamp {
+    margin-top: 5px;
+    font-size: 0.8em;
+    color: #888;
+}
+
+/* User List with Green Dot */
+#userList li {
+    display: flex;
+    align-items: center;
+}
+
+.online-status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Input & Button Styling */
+#messageInput {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    resize: none;
+}
+
+#sendButton {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: green;
+}
+
+#sendButton i {
+    color: green;
+}
+
+/* Chat Page Specific Styles */
+.chat-page {
+    background-color: #f0f0f0; /* Same as register/login pages */
+}
+

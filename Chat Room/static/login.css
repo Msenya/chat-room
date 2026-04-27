@@ -1,0 +1,117 @@
+/* Global styles */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Form container styles */
+.login-container {
+    max-width: 400px;
+    width: 90%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    /* Centering is handled by body flex properties */
+}
+
+/* Header inside the form container */
+.login-container h2 {
+    font-size: 24px;
+    margin-bottom: 0; /* Reduced margin */
+    color: #333;
+    text-align: center;
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    flex-grow: 1;
+}
+
+.password-container button {
+    margin-left: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #5cb85c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Submit button */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #5cb85c;
+    color: white;
+    cursor: pointer;
+}
+
+button[type="submit"]:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Link styles */
+p {
+    text-align: center;
+    margin-top: 10px; /* Reduced top margin */
+}
+
+p a {
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Required field styles */
+.required {
+    color: red;
+    cursor: pointer;
+    position: relative;
+}
+
+.required:hover::after {
+    content: 'This field is required';
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+}

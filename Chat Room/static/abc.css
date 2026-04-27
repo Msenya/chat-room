@@ -1,0 +1,137 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.required {
+    color: red;
+    cursor: pointer;
+    position: relative;
+}
+
+.required:hover::after {
+    content: 'This field is required';
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.form-container {
+    max-width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-top: 50px;
+}
+
+.terms {
+    margin-top: 20px;
+}
+
+button[disabled] {
+    cursor: not-allowed;
+}
+
+.header {
+    position: absolute;
+    top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.emailError {
+    font-weight: bold;
+    color: red;
+}
+
+.toggle-password {
+    cursor: pointer;
+    font-size: 12px;
+    color: #666;
+    margin-left: 5px;
+}
+
+.toggle-password:hover {
+    text-decoration: underline;
+}
+
+.password-strength {
+    font-weight: bold;
+}
+
+.password-strength.weak {
+    color: red;
+}
+
+.password-strength.medium {
+    color: orange;
+}
+
+.password-strength.strong {
+    color: green;
+}
+
+.matchMessage {
+    font-weight: bold;
+    color: red;
+}
+
+.chat-container {
+    width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+
+#message {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+#send {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#send:hover {
+    background-color: #45a049;
+}
